@@ -75,4 +75,30 @@ public class RhymersJUnitTest {
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
     }
 
+    @Test
+    public void testReportRejected() {
+        HanoiRhymer hanoi = new HanoiRhymer();
+        final int EXPECTED_REJECTED_NUMBER = 1;
+
+        hanoi.countIn(1);
+        hanoi.countIn(2);
+
+        int result = hanoi.reportRejected();
+        Assert.assertEquals(EXPECTED_REJECTED_NUMBER, result);
+    }
+
+    @Test
+    public void testHanoiCountIn(){
+        HanoiRhymer hanoi = new HanoiRhymer();
+        final int EXPECTED_REJECTED_NUMBER = 2;
+        final int EXPECTED_VALUE = 0;
+
+        for(int in=0; in<3; in++){
+            hanoi.countIn(in);
+        }
+
+        int rejected_number_result = hanoi.reportRejected();
+        Assert.assertEquals(rejected_number_result, EXPECTED_REJECTED_NUMBER);
+        Assert.assertEquals(hanoi.countOut(), EXPECTED_VALUE);
+    }
 }
