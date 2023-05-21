@@ -1,5 +1,6 @@
 package edu.kis.vh.nursery.list;
 
+//TODO: klasa IntLinkedList oraz jej metody nie są nigdzie używane, powinno się je użyć lub usunąć
 public class IntLinkedList {
 
     Node last;
@@ -19,6 +20,7 @@ public class IntLinkedList {
         return last == null;
     }
 
+    //TODO: wartość zwracana przez metodę isFull() powinna być uzależniona od jakichś czynników
     public boolean isFull() {
         return false;
     }
@@ -35,6 +37,38 @@ public class IntLinkedList {
         int ret = last.value;
         last = last.prev;
         return ret;
+    }
+
+}
+
+
+//TODO: część geterów i seterów nie jest używana, więc powinno się je usunąć
+class Node {
+    public final int value;
+
+    public Node prev, next;
+    public Node(int i) {
+        value = i;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public Node getPrev() {
+        return prev;
+    }
+
+    public void setPrev(Node prev) {
+        this.prev = prev;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
     }
 
 }
