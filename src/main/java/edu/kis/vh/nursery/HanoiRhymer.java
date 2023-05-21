@@ -41,6 +41,7 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
             super.countIn(in);
     }
 
+    // TODO: usunąć nieużywany geter getTotalRejected
     public int getTotalRejected() {
         return totalRejected;
     }
